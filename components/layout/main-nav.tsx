@@ -19,9 +19,9 @@ export default function NavbarScrollWithLogo() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Construction', href: '/construction' },
-    { name: 'Consultancy', href: '/consultancy' },
-    { name: 'Training', href: '/training' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
   ];
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function NavbarScrollWithLogo() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0A1236]/95 backdrop-blur-md shadow-lg border-b border-blue-900/20'
+          ? 'bg-[#0A1236]/95 backdrop-blur-md shadow-lg border-b border-primary/20'
           : 'bg-transparent'
       }`}
     >
@@ -98,7 +98,7 @@ export default function NavbarScrollWithLogo() {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="bg-[#0A1236] border-l border-blue-900/20 text-white w-[300px] sm:w-[400px]"
+              className="bg-[#0A1236] border-l border-primary/20 text-white w-[300px] sm:w-[400px]"
             >
               <SheetHeader>
                 <SheetTitle className="text-white text-left">Menu</SheetTitle>

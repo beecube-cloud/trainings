@@ -30,9 +30,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+  /* --color-secondary: var(--secondary); */
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
+  /* --color-primary: var(--primary); */
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -41,6 +41,22 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Primary Colors */
+  --color-primary: #000099;
+  --color-primary-50: #efedff;
+  --color-primary-900: #0e0e4b;
+
+  /* Secondary Colors */
+  --color-secondary: #ed1c25;
+  --color-secondary-gray: #646a69;
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-white-80: #ffffffcc;
+
+  /* Typography */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -118,5 +134,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    @apply font-sans;
   }
 }

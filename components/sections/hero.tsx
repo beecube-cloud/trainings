@@ -87,14 +87,14 @@ function ParallaxImageElement({
   const positions = {
     "top-left": "top-1/2 -translate-y-1/2 -left-12 md:-left-8 lg:left-0",
     "top-right": "top-[15%] -right-12 md:-right-8 lg:right-0",
-    "bottom-left": "bottom-[10%] left-4 md:left-8 lg:left-12",
+    "bottom-left": "bottom-[-15%] left-4 md:left-8 lg:left-12",
     "bottom-right": "bottom-[-5%] right-6 md:right-10 lg:right-16",
   };
 
   const sizes = {
     "top-left": "w-40 h-56 md:w-56 md:h-[380px] lg:w-[280px] lg:h-[440px]",
     "top-right": "w-48 h-32 md:w-64 md:h-48 lg:w-[340px] lg:h-[230px]",
-    "bottom-left": "w-52 h-32 md:w-[280px] md:h-40 lg:w-[380px] lg:h-[480px]",
+    "bottom-left": "w-52 h-32 md:w-[280px] md:h-40 lg:w-[500px] lg:h-[280px]",
     "bottom-right": "w-44 h-56 md:w-56 md:h-[340px] lg:w-[280px] lg:h-[420px]",
   };
 
@@ -143,3 +143,47 @@ function HeroButton({ text, href, variant = "primary" }: HeroButtonProps) {
   );
 }
 
+export function HeroSingleImageExample() {
+  const parallaxImages = [
+    {
+      src: "/images/hero/img-1.jpg",
+      alt: "Workers with plans",
+      position: "top-left",
+      speed: 0.1,
+    },
+    {
+      src: "/images/hero/img-3.jpg",
+      alt: "Office workspace",
+      position: "top-right",
+      speed: 0.12,
+    },
+    {
+      src: "/images/hero/img-2.jpg",
+      alt: "Business presentation",
+      position: "bottom-left",
+      speed: 0.15,
+    },
+
+    {
+      src: "/images/hero/img-4.jpg",
+      alt: "Construction site",
+      position: "bottom-right",
+      speed: 0.08,
+    },
+  ];
+  return (
+    <HeroSection
+      variant="single-image"
+      brandLabel="Esthoj Construction & Facility Management"
+      brandIcon="/assets/hero/dot.svg"
+      heading="Shaping Infrastructure. Strengthening Communities."
+      description="Engineering Construction & Facility Management has translated client visions into durable, sustainable infrastructure, from commercial and residential developments to roads, energy and facility services."
+      backgroundColor="#0E0E4B"
+      backgroundImage="/assets/hero/herobg.svg"
+      textAlign="center"
+      overlay={true}
+      overlayOpacity={60}
+      parallaxImages={parallaxImages}
+    />
+  );
+}

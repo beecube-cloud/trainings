@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Link from "next/link";
+import Image from "next/image";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import { useState, useEffect } from 'react';
+} from "@/components/ui/sheet";
+import { useState, useEffect } from "react";
 
 export default function NavbarScrollWithLogo() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about-us' },
-    { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/projects' },
+    { name: "About Us", href: "/about-us" },
+    { name: "Team", href: "/team" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Blog", href: "/blog" },
   ];
 
   useEffect(() => {
@@ -29,16 +29,16 @@ export default function NavbarScrollWithLogo() {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0A1236]/95 backdrop-blur-md shadow-lg border-b border-primary/20'
-          : 'bg-transparent'
+          ? "bg-[#0A1236]/95 backdrop-blur-md shadow-lg border-b border-primary/20"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function NavbarScrollWithLogo() {
           {/* Logo with Image */}
           <Link href="/" className="flex items-center space-x-2 z-10">
             <Image
-              src="/assets/logo.svg" 
+              src="/assets/logo.svg"
               alt="Esthoj Logo"
               width={40}
               height={40}
@@ -76,8 +76,8 @@ export default function NavbarScrollWithLogo() {
               variant="outline"
               className={`border-2 bg-transparent text-white hover:text-white rounded-full px-6 transition-all duration-300 ${
                 scrolled
-                  ? 'border-white/30 hover:bg-white/20'
-                  : 'border-white/20 hover:bg-white/10'
+                  ? "border-white/30 hover:bg-white/20"
+                  : "border-white/20 hover:bg-white/10"
               }`}
             >
               <Link href="/contact">Get in touch</Link>
@@ -85,7 +85,7 @@ export default function NavbarScrollWithLogo() {
           </div>
 
           {/* Mobile Menu */}
-          <Sheet open={open} onOpenChange={setOpen} >
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button
                 variant="ghost"
@@ -96,8 +96,8 @@ export default function NavbarScrollWithLogo() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent 
-              side="right" 
+            <SheetContent
+              side="right"
               className="bg-[#0A1236] border-l border-primary/20 text-white w-[300px] sm:w-[400px]"
             >
               <SheetHeader>

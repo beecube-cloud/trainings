@@ -180,6 +180,7 @@ export function HeroSingleImageExample() {
       description="Engineering Construction & Facility Management has translated client visions into durable, sustainable infrastructure, from commercial and residential developments to roads, energy and facility services."
       backgroundColor="#0E0E4B"
       backgroundImage="/assets/hero/herobg.svg"
+      buttons={divisionButtons}
       textAlign="center"
       overlay={true}
       overlayOpacity={60}

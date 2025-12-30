@@ -20,8 +20,8 @@ export default function NavbarScrollWithLogo() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Services", href: "/services" },
-    { name: "Projects", href: "/projects" },
+    { name: "Services", href: "/service" },
+    { name: "Projects", href: "/project" },
   ];
 
   useEffect(() => {

@@ -50,13 +50,13 @@ export const parallaxImages: ParallaxImage[] = [
 
   export const divisionButtons: HeroButton[] = [
     {
-      text: 'Explore Divisions',
-      href: '/divisions',
+      text: 'Get Started',
+      href: '/get-started',
       variant: 'primary',
     },
     {
-      text: 'Get in touch',
-      href: '/contact',
+      text: 'Download Brochure',
+      href: '/brochure',
       variant: 'secondary',
     },
   ];

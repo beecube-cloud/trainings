@@ -18,10 +18,10 @@ export default function NavbarScrollWithLogo() {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Team", href: "/team" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Blog", href: "/blog" },
+    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
   ];
 
   useEffect(() => {
@@ -53,7 +53,14 @@ export default function NavbarScrollWithLogo() {
               className="object-contain"
               priority
             />
-            <span className="text-white text-2xl font-semibold">Esthoj</span>
+            <div className="flex flex-col">
+              <span className="text-white text-xl font-bold leading-tight">
+                Esthoj
+              </span>
+              <span className="text-white/60 text-[8px] font-semibold uppercase tracking-widest -mt-0.5">
+                Training
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -80,7 +87,7 @@ export default function NavbarScrollWithLogo() {
                   : "border-white/20 hover:bg-white/10"
               }`}
             >
-              <Link href="/contact">Get in touch</Link>
+              <Link href="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -120,7 +127,7 @@ export default function NavbarScrollWithLogo() {
                   className="border-2 border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white rounded-full mt-4"
                   onClick={() => setOpen(false)}
                 >
-                  <Link href="/contact">Get in touch</Link>
+                  <Link href="/contact">Get Started</Link>
                 </Button>
               </div>
             </SheetContent>

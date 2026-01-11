@@ -10,7 +10,7 @@ const ContactSection = () => {
     phone: "",
     message: "",
   });
-  
+
   const [isVisible, setIsVisible] = useState(false);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -25,7 +25,7 @@ const ContactSection = () => {
           // Animate contact info items
           [0, 1, 2].forEach((index) => {
             setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
+              setVisibleItems((prev) => [...prev, index]);
             }, index * 200);
           });
         }
@@ -58,13 +58,13 @@ const ContactSection = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     console.log("Form submitted:", formData);
     setIsSubmitting(false);
-    
+
     // Reset form with animation
     setFormData({
       fullName: "",
@@ -75,7 +75,10 @@ const ContactSection = () => {
   };
 
   return (
-    <div ref={sectionRef} className="w-full min-h-screen bg-primary-50 via-blue-50 px-8 py-24 relative overflow-hidden">
+    <div
+      ref={sectionRef}
+      className="w-full min-h-screen bg-primary-50 via-blue-50 px-8 py-24 relative overflow-hidden"
+    >
       {/* Left decorative line SVG */}
       <div className="absolute left-0 top-0 h-full opacity-15">
         <Image
@@ -87,7 +90,7 @@ const ContactSection = () => {
           priority
         />
       </div>
-      
+
       {/* Right decorative line SVG */}
       <div className="absolute right-0 top-0 h-full opacity-15">
         <Image
@@ -103,14 +106,14 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
-            <div className={`transition-all duration-1000 ${
-              isVisible 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-8'
-            }`}>
-              <h2 className="text-5xl text-primary mb-4">
-                Contact us
-              </h2>
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 transform translate-y-0"
+                  : "opacity-0 transform translate-y-8"
+              }`}
+            >
+              <h2 className="text-5xl text-primary mb-4">Contact us</h2>
               <p className="text-gray-600 text-lg">
                 We are here to help you make a first move to greener choice.
               </p>
@@ -128,7 +131,7 @@ const ContactSection = () => {
                     >
                       info@esthoj.com
                     </a>
-                  )
+                  ),
                 },
                 {
                   icon: Phone,
@@ -138,38 +141,41 @@ const ContactSection = () => {
                       0814 098 9555 | 0905 160 2999 |<br />
                       0908 398 6435
                     </p>
-                  )
+                  ),
                 },
                 {
                   icon: MapPin,
                   label: "Address",
                   content: (
                     <p className="text-secondary-gray font-medium">
-                      10, Lennar Hillside Estate, Kubwa, Abuja.
+                      Suit 10, WABP Plaza Amayo Adedevoh Way, Plot No: 175
+                      Cadastral Zone B08, Jahi, Abuja.
                     </p>
-                  )
-                }
+                  ),
+                },
               ].map((item, index) => {
                 const Icon = item.icon;
                 const isItemVisible = visibleItems.includes(index);
-                
+
                 return (
-                  <div 
+                  <div
                     key={index}
                     className={`flex items-start gap-4 group transition-all duration-700 hover:transform hover:scale-105 ${
                       isItemVisible
-                        ? 'opacity-100 transform translate-x-0'
-                        : 'opacity-0 transform -translate-x-8'
+                        ? "opacity-100 transform translate-x-0"
+                        : "opacity-0 transform -translate-x-8"
                     }`}
                     style={{
-                      transitionDelay: `${300 + index * 200}ms`
+                      transitionDelay: `${300 + index * 200}ms`,
                     }}
                   >
                     <div className="bg-primary p-3 rounded-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 group-hover:shadow-lg">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 mb-1 group-hover:text-primary transition-colors duration-300">{item.label}</p>
+                      <p className="text-sm text-gray-500 mb-1 group-hover:text-primary transition-colors duration-300">
+                        {item.label}
+                      </p>
                       {item.content}
                     </div>
                   </div>
@@ -178,29 +184,40 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className={`bg-white rounded-3xl shadow-lg p-8 transition-all duration-1000 delay-500 hover:shadow-xl ${
-            isVisible 
-              ? 'opacity-100 transform translate-y-0' 
-              : 'opacity-0 transform translate-y-8'
-          }`}>
+          <div
+            className={`bg-white rounded-3xl shadow-lg p-8 transition-all duration-1000 delay-500 hover:shadow-xl ${
+              isVisible
+                ? "opacity-100 transform translate-y-0"
+                : "opacity-0 transform translate-y-8"
+            }`}
+          >
             <h3 className="text-2xl font-bold text-primary mb-6">
               Fill out the form
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {[
-                { name: 'fullName', label: 'Full Name', type: 'text' },
-                { name: 'email', label: 'Email', type: 'email' },
-                { name: 'phone', label: 'Phone', type: 'tel' },
+                { name: "fullName", label: "Full Name", type: "text" },
+                { name: "email", label: "Email", type: "email" },
+                { name: "phone", label: "Phone", type: "tel" },
               ].map((field, index) => (
-                <div key={field.name} className={`transition-all duration-700 delay-${700 + index * 100} ${
-                  isVisible 
-                    ? 'opacity-100 transform translate-x-0' 
-                    : 'opacity-0 transform translate-x-8'
-                }`}>
-                  <label className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                    focusedField === field.name ? 'text-primary' : 'text-gray-700'
-                  }`}>
+                <div
+                  key={field.name}
+                  className={`transition-all duration-700 delay-${
+                    700 + index * 100
+                  } ${
+                    isVisible
+                      ? "opacity-100 transform translate-x-0"
+                      : "opacity-0 transform translate-x-8"
+                  }`}
+                >
+                  <label
+                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
+                      focusedField === field.name
+                        ? "text-primary"
+                        : "text-gray-700"
+                    }`}
+                  >
                     {field.label}
                   </label>
                   <input
@@ -212,35 +229,41 @@ const ContactSection = () => {
                     onBlur={handleBlur}
                     className={`w-full px-4 py-3 border rounded-xl focus:outline-none transition-all duration-300 transform ${
                       focusedField === field.name
-                        ? 'border-primary ring-2 ring-primary/20 scale-105 shadow-lg'
-                        : 'border-gray-200 hover:border-gray-300 focus:border-transparent'
+                        ? "border-primary ring-2 ring-primary/20 scale-105 shadow-lg"
+                        : "border-gray-200 hover:border-gray-300 focus:border-transparent"
                     }`}
                     required
                   />
                 </div>
               ))}
 
-              <div className={`transition-all duration-700 delay-1000 ${
-                isVisible 
-                  ? 'opacity-100 transform translate-x-0' 
-                  : 'opacity-0 transform translate-x-8'
-              }`}>
-                <label className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                  focusedField === 'message' ? 'text-primary' : 'text-gray-700'
-                }`}>
+              <div
+                className={`transition-all duration-700 delay-1000 ${
+                  isVisible
+                    ? "opacity-100 transform translate-x-0"
+                    : "opacity-0 transform translate-x-8"
+                }`}
+              >
+                <label
+                  className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
+                    focusedField === "message"
+                      ? "text-primary"
+                      : "text-gray-700"
+                  }`}
+                >
                   Message
                 </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  onFocus={() => handleFocus('message')}
+                  onFocus={() => handleFocus("message")}
                   onBlur={handleBlur}
                   rows={4}
                   className={`w-full px-4 py-3 border rounded-xl focus:outline-none resize-none transition-all duration-300 transform ${
-                    focusedField === 'message'
-                      ? 'border-primary ring-2 ring-primary/20 scale-105 shadow-lg'
-                      : 'border-gray-200 hover:border-gray-300 focus:border-transparent'
+                    focusedField === "message"
+                      ? "border-primary ring-2 ring-primary/20 scale-105 shadow-lg"
+                      : "border-gray-200 hover:border-gray-300 focus:border-transparent"
                   }`}
                   required
                 ></textarea>
@@ -251,10 +274,14 @@ const ContactSection = () => {
                 disabled={isSubmitting}
                 className={`w-full py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:shadow-lg ${
                   isSubmitting
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-primary hover:bg-blue-800 text-white'
-                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: '1200ms' }}
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-primary hover:bg-blue-800 text-white"
+                } ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: "1200ms" }}
               >
                 {isSubmitting ? (
                   <>

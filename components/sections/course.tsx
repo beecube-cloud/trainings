@@ -103,6 +103,16 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       level: "Advance",
       type: "By Jennifer Wilson",
     },
+    {
+      id: 9,
+      title: "Mind Set and Personal Development Training",
+      description:
+        "Develop a growth mindset and personal development strategies to achieve long-term success. This training helps individuals build essential life and career skills, enhance leadership, and foster personal growth through practical tools and interactive sessions.",
+      image: "/images/courses/img-4.png",
+      duration: "2–4 Weeks",
+      level: "All Levels",
+      type: "Paid Course",
+    },
   ];
 
   const displayedCourses = coursePage ? courses : courses.slice(0, 4);

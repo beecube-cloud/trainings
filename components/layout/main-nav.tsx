@@ -20,8 +20,10 @@ export default function NavbarScrollWithLogo() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Services", href: "/service" },
-    { name: "Projects", href: "/project" },
+    { name: "Courses", href: "/courses" },
+    //{ name: "Services", href: "/services" },
+
+    ///{ name: "Projects", href: "/projects" },
   ];
 
   useEffect(() => {
@@ -87,7 +89,7 @@ export default function NavbarScrollWithLogo() {
                   : "border-white/20 hover:bg-white/10"
               }`}
             >
-              <Link href="/contact">Get Started</Link>
+              <Link href="/courses">Get Started</Link>
             </Button>
           </div>
 

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 interface FooterLink {
   name: string;
@@ -33,18 +34,13 @@ export default function CustomizableFooter({
     {
       title: 'Platform',
       links: [
-        { name: 'Solutions', href: '/solutions' },
-        { name: 'How it works', href: '/how-it-works' },
-        { name: 'Pricing', href: '/pricing' },
+        { name: 'Courses', href: '/courses' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { name: 'About', href: '/about' },
-        { name: 'Our Mission', href: '/mission' },
-        { name: 'Careers', href: '/careers', badge: 'HIRING' },
-        { name: 'Contact', href: '/contact' },
+        { name: 'About', href: '/about-us' },
       ],
     },
     {
@@ -56,10 +52,10 @@ export default function CustomizableFooter({
       ],
     },
   ],
-  primaryButtonText = 'Explore Divisions',
-  primaryButtonHref = '/divisions',
-  secondaryButtonText = 'Get in touch',
-  secondaryButtonHref = '/contact',
+  primaryButtonText = 'Explore Courses',
+  primaryButtonHref = '/courses',
+  secondaryButtonText = 'About Us',
+  secondaryButtonHref = '/about-us',
   copyrightText = `© ${new Date().getFullYear()} Esthoj Group. All rights reserved.`,
   showButtons = true,
 }: FooterProps) {
@@ -72,14 +68,7 @@ export default function CustomizableFooter({
           <div className="space-y-8">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10">
-                <div className="grid grid-cols-2 gap-0.5 w-10 h-10">
-                  <div className="bg-red-600 rounded-tl"></div>
-                  <div className="bg-red-600 rounded-tr"></div>
-                  <div className="bg-blue-600 rounded-bl"></div>
-                  <div className="bg-red-600 rounded-br"></div>
-                </div>
-              </div>
+              <Image src="/assets/logo.svg" alt="Esthoj Logo" width={40} height={40} />
               <span className="text-2xl font-semibold">{logoText}</span>
             </Link>
 

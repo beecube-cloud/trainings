@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <Course />
+      <Course coursePage={false} />
       <ContactSection />
     </>
   );

@@ -3,55 +3,118 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export const Course = () => {
+const WHATSAPP_NUMBER = "2348140989555"; // Replace with your WhatsApp number (country code + number, no + or spaces)
+
+function buildWhatsAppUrl(course: { title: string; duration: string; level: string; type: string }) {
+  const message = `Hi, I'm interested in this course:\n\n*${course.title}*\n• Duration: ${course.duration}\n• Level: ${course.level}\n• Type: ${course.type}\n\nI'd like to get more information. Thank you!`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export const Course = ({coursePage=false}: {coursePage: boolean}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const courses = [
     {
       id: 1,
-      title: "Project Management Training",
+      title: "Primavera P6 Training",
       description:
-        "Our Project Management Training programs equip professionals with the skills needed to plan, coordinate, and deliver successful projects. With a blend of global methodologies and hands-on practice, we help organizations strengthen leadership, enhance decision-making, and drive consistent project success.",
+        "Master Oracle Primavera P6 for project scheduling, resource planning, and portfolio management. Our hands-on training covers WBS, activities, baselines, and reporting—ideal for construction, engineering, and infrastructure professionals.",
       image: "/images/courses/img-1.png",
-      duration: "4 Weeks",
-      level: "Beginner",
-      type: "Free Course",
+      duration: "2–4 Weeks",
+      level: "Beginner to Intermediate",
+      type: "Paid Course",
     },
     {
       id: 2,
-      title: "Self-Development Training",
+      title: "PlanSwit Training",
       description:
-        "Our Self-Development Training programs empower individuals and teams to achieve meaningful personal and professional growth. Through practical tools, assessments, and interactive exercises, participants build essential life and career skills that foster long-term success.",
+        "Learn PlanSwit for efficient construction takeoffs, quantity surveying, and document management. Build practical skills in digital measurement, cost estimation, and project documentation used across the built environment.",
       image: "/images/courses/img-2.png",
-      duration: "4 Weeks",
+      duration: "2–3 Weeks",
       level: "Beginner",
       type: "Paid Course",
     },
     {
       id: 3,
-      title: "Accreditation Training Support",
+      title: "ITwo CostX Training",
       description:
-        "We offer targeted accreditation support to help universities and polytechnics meet regulatory standards and demonstrate academic excellence. Our structured approach prepares management, faculty, and quality assurance teams for accreditation.",
+        "Get certified in iTwo CostX for BIM-based cost estimating and quantity takeoff. Our training covers 2D/3D measurement, rate libraries, and integration with design models for accurate, audit-ready estimates.",
       image: "/images/courses/img-3.png",
+      duration: "2–3 Weeks",
+      level: "Beginner to Intermediate",
+      type: "Paid Course",
+    },
+    {
+      id: 4,
+      title: "Project Management Training for Corporate Organisations, Government Agencies, Groups and Individuals",
+      description:
+        "End-to-end project management training for organisations, government agencies, groups, and individuals. Covers planning, execution, monitoring, and closure using recognised methodologies—strengthen leadership, decision-making, and delivery outcomes.",
+      image: "/images/courses/img-4.png",
+      duration: "4 Weeks",
+      level: "Beginner to Advanced",
+      type: "Paid Course",
+    },
+    {
+      id: 5,
+      title: "Self-Development and Skill Empowerment Trainings for Government Institutions, Religious Organisations, Groups and Individuals",
+      description:
+        "Tailored self-development and skill empowerment programmes for government institutions, religious organisations, groups, and individuals. Build essential life and career skills, leadership, and personal growth through practical tools and interactive sessions.",
+      image: "/images/courses/img-4.png",
+      duration: "2–4 Weeks",
+      level: "All Levels",
+      type: "Paid Course",
+    },
+    {
+      id: 6,
+      title: "Project Management Training",
+      description:
+        "Our Project Management Training programs equip professionals with the skills needed to plan, coordinate, and deliver successful projects. With a blend of global methodologies and hands-on practice, we help organizations strengthen leadership, enhance decision-making, and drive consistent project success.",
+      image: "/images/courses/img-4.png",
       duration: "4 Weeks",
       level: "Beginner",
       type: "Free Course",
     },
     {
-      id: 4,
-      title: "Advanced JavaScript",
+      id: 7,
+      title: "Self-Development Training",
       description:
-        "Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features. Build complex applications with confidence.",
-      image:  "/images/courses/img-4.png",
+        "Our Self-Development Training programs empower individuals and teams to achieve meaningful personal and professional growth. Through practical tools, assessments, and interactive exercises, participants build essential life and career skills that foster long-term success.",
+      image: "/images/courses/img-4.png",
+      duration: "4 Weeks",
+      level: "Beginner",
+      type: "Paid Course",
+    },
+    {
+      id: 8,
+      title: "Accreditation Training Support",
+      description:
+        "We offer targeted accreditation support to help universities and polytechnics meet regulatory standards and demonstrate academic excellence. Our structured approach prepares management, faculty, and quality assurance teams for accreditation.",
+      image: "/images/courses/img-4.png",
+      duration: "4 Weeks",
+      level: "Beginner",
+      type: "Free Course",
+    },
+    {
+      id: 9,
+      title: "Web Development Training",
+      description:
+        "Take your Web Development skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features. Build complex applications with confidence.",
+      image: "/images/courses/img-4.png",
       duration: "6 Weeks",
       level: "Advance",
       type: "By Jennifer Wilson",
     },
   ];
 
+  const displayedCourses = coursePage ? courses : courses.slice(0, 4);
 
   return (
-    <section className="pt-8 md:pt-20 lg:pt-80 pb-32 px-6 lg:px-20 max-w-[1440px] mx-auto bg-[#FDFDFF]">
-      <div className="text-center mb-16">
+    <section className={`max-w-[1440px] mx-auto bg-[#FDFDFF] ${
+      coursePage
+        ? "pt-8 md:pt-12 lg:pt-16 pb-16 md:pb-20 px-6 lg:px-12"
+        : "pt-8 md:pt-20 lg:pt-80 pb-32 px-6 lg:px-20"
+    }`}>
+      {!coursePage && (
+        <div className="text-center mb-16">
         <h2 className="text-4xl md:text-6xl text-[#0A1236] mb-6 tracking-tight font-bold">
           Our Courses
         </h2>
@@ -60,9 +123,9 @@ export const Course = () => {
           facilities management.
         </p>
       </div>
-
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
-        {courses.map((course) => (
+        {displayedCourses.map((course) => (
           <div
             key={course.id}
             className="flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md"
@@ -103,9 +166,14 @@ export const Course = () => {
               </p>
 
               <div className="mt-auto">
-                <button className="w-full py-4 px-6 bg-[#EEF2FF] hover:bg-[#E0E7FF] text-[#0A1236] font-bold rounded-xl transition-colors duration-200">
+                <a
+                  href={buildWhatsAppUrl(course)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 px-6 bg-[#EEF2FF] hover:bg-[#E0E7FF] text-[#0A1236] font-bold rounded-xl transition-colors duration-200 text-center"
+                >
                   Get it Now
-                </button>
+                </a>
               </div>
             </div>
           </div>

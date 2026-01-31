@@ -18,7 +18,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "Primavera P6 Training",
       description:
         "Master Oracle Primavera P6 for project scheduling, resource planning, and portfolio management. Our hands-on training covers WBS, activities, baselines, and reporting—ideal for construction, engineering, and infrastructure professionals.",
-      image: "/images/courses/img-1.png",
+      image: "/images/courses/image6.jpeg",
       duration: "2–4 Weeks",
       level: "Beginner to Intermediate",
       type: "Paid Course",
@@ -28,7 +28,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "PlanSwit Training",
       description:
         "Learn PlanSwit for efficient construction takeoffs, quantity surveying, and document management. Build practical skills in digital measurement, cost estimation, and project documentation used across the built environment.",
-      image: "/images/courses/img-2.png",
+      image: "/images/courses/image5.jpeg",
       duration: "2–3 Weeks",
       level: "Beginner",
       type: "Paid Course",
@@ -38,7 +38,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "ITwo CostX Training",
       description:
         "Get certified in iTwo CostX for BIM-based cost estimating and quantity takeoff. Our training covers 2D/3D measurement, rate libraries, and integration with design models for accurate, audit-ready estimates.",
-      image: "/images/courses/img-3.png",
+      image: "/images/courses/image7.jpeg",
       duration: "2–3 Weeks",
       level: "Beginner to Intermediate",
       type: "Paid Course",
@@ -48,7 +48,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "Project Management Training for Corporate Organisations, Government Agencies, Groups and Individuals",
       description:
         "End-to-end project management training for organisations, government agencies, groups, and individuals. Covers planning, execution, monitoring, and closure using recognised methodologies—strengthen leadership, decision-making, and delivery outcomes.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/image11.jpg",
       duration: "4 Weeks",
       level: "Beginner to Advanced",
       type: "Paid Course",
@@ -58,7 +58,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "Self-Development and Skill Empowerment Trainings for Government Institutions, Religious Organisations, Groups and Individuals",
       description:
         "Tailored self-development and skill empowerment programmes for government institutions, religious organisations, groups, and individuals. Build essential life and career skills, leadership, and personal growth through practical tools and interactive sessions.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/image10.jpeg",
       duration: "2–4 Weeks",
       level: "All Levels",
       type: "Paid Course",
@@ -68,17 +68,17 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "Project Management Training",
       description:
         "Our Project Management Training programs equip professionals with the skills needed to plan, coordinate, and deliver successful projects. With a blend of global methodologies and hands-on practice, we help organizations strengthen leadership, enhance decision-making, and drive consistent project success.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/image9.jpeg",
       duration: "4 Weeks",
       level: "Beginner",
-      type: "Free Course",
+      type: "Paid Course",
     },
     {
       id: 7,
       title: "Self-Development Training",
       description:
         "Our Self-Development Training programs empower individuals and teams to achieve meaningful personal and professional growth. Through practical tools, assessments, and interactive exercises, participants build essential life and career skills that foster long-term success.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/img-1.png",
       duration: "4 Weeks",
       level: "Beginner",
       type: "Paid Course",
@@ -88,10 +88,10 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "Accreditation Training Support",
       description:
         "We offer targeted accreditation support to help universities and polytechnics meet regulatory standards and demonstrate academic excellence. Our structured approach prepares management, faculty, and quality assurance teams for accreditation.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/img-3.png",
       duration: "4 Weeks",
       level: "Beginner",
-      type: "Free Course",
+      type: "Paid Course",
     },
     {
       id: 9,
@@ -101,14 +101,14 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       image: "/images/courses/img-4.png",
       duration: "6 Weeks",
       level: "Advance",
-      type: "By Jennifer Wilson",
+      type: "",
     },
     {
       id: 9,
       title: "Mind Set and Personal Development Training",
       description:
         "Develop a growth mindset and personal development strategies to achieve long-term success. This training helps individuals build essential life and career skills, enhance leadership, and foster personal growth through practical tools and interactive sessions.",
-      image: "/images/courses/img-4.png",
+      image: "/images/courses/image12.jpg",
       duration: "2–4 Weeks",
       level: "All Levels",
       type: "Paid Course",

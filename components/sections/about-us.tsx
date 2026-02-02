@@ -88,7 +88,7 @@ const AboutSection = ({
                 : 'opacity-0 transform -translate-x-8'
             }`}>
               <p className={`${textcontent} leading-relaxed`}>
-                Esthoj Training and Consultancy Limited launched in 2023 as part
+                Esthoj Training and Consultancy Limited launched in 2015 as part
                 of Esthoj Multi-Disciplinary Group. With over a decade of
                 consulting and international experience across the built
                 environment, we design and deliver industry-leading training—

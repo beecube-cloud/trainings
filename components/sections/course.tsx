@@ -28,7 +28,7 @@ export const Course = ({coursePage=false}: {coursePage: boolean}) => {
       title: "PlanSwit Training",
       description:
         "Learn PlanSwit for efficient construction takeoffs, quantity surveying, and document management. Build practical skills in digital measurement, cost estimation, and project documentation used across the built environment.",
-      image: "/images/courses/image5.jpeg",
+      image: "/images/courses/image-swift.jpeg",
       duration: "2–3 Weeks",
       level: "Beginner",
       type: "Paid Course",

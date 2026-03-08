@@ -1,5 +1,6 @@
 "use client"
 import AboutSection from '@/components/sections/about-us'
+import PastTrainings from '@/components/sections/past-trainings'
 import SectionWithLineDecorator from '@/sections/sectionWithLineDecorator'
 import React, { useEffect, useRef } from 'react'
 
@@ -24,6 +25,7 @@ function page() {
   return (
     <SectionWithLineDecorator sectionRef={sectionRef} backgroundColor="white">
     <AboutSection  textheading="text-white" textcontent="text-gray-300" backgroundColor="bg-[#0A1236]/95" />
+    <PastTrainings />
     </SectionWithLineDecorator>
   )
 }

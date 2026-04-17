@@ -18,7 +18,7 @@ export default function sectionWithLineDecorator(
 
 
       {/* Left decorative line SVG */}
-      <div className="absolute left-0 top-0 h-full opacity-15">
+      <div className="absolute left-0 top-0 h-full opacity-15 pointer-events-none">
         <Image
           src="/contact-us-left-line.svg"
           alt="Left decorative line"
@@ -30,7 +30,7 @@ export default function sectionWithLineDecorator(
       </div>
       
       {/* Right decorative line SVG */}
-      <div className="absolute right-0 top-0 h-full opacity-15">
+      <div className="absolute right-0 top-0 h-full opacity-15 pointer-events-none">
         <Image
           src="/contact-us-right-line.svg"
           alt="Right decorative line"
